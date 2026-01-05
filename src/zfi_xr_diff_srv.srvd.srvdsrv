@@ -1,0 +1,19 @@
+@EndUserText.label: 'Kur farkı fatura service tanımı'
+define service ZFI_XR_DIFF_SRV {
+  expose ZFI_I_XRDH;
+  expose ZFI_I_XRDI;
+  expose I_AccountingDocumentType;
+  expose I_CompanyCode;
+  expose I_Currency;
+  expose I_Customer;
+  expose I_Supplier;
+  expose I_DebitCreditCode;
+  expose I_TaxCode;
+  expose I_CostCenter;
+  expose I_ProfitCenter;
+  expose I_Segment;
+  expose ZFI_I_GLACCOUNT_VH;
+  expose ZFI_I_JOURNALENTRY_VH;
+  expose I_FiscalYearForCompanyCode;
+  expose ZFI_I_TXSTAT_VH;
+}

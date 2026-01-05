@@ -1,0 +1,112 @@
+unmanaged implementation in class zcl_fi_bp_xrd unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZFI_I_XRDH
+draft table zfi_t_xrdh_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+{
+  create { default function; }
+  update ( features : global );
+  delete ( features : global );
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation ( always ) checkFieldsMandatoryOnSave;
+    validation ( always ) ZFI_I_XRDI~checkFieldsMandatoryOnSave;
+    validation ( always ) ZFI_I_XRDI~checkFieldValuesOnSave;
+  }
+
+  action ( features : instance ) currencyClearing parameter ZFI_D_XRDH_CLEARING_PARAM result [1] $self { default function GetDefaultsForCurrencyClearing; }
+  action ( features : instance ) reverseXRDifference result [1] $self;
+  action ( features : instance ) reverseCurrencyClearing result [1] $self;
+
+  field ( readonly, numbering : managed ) TransactionUUID;
+  field ( readonly ) CreatedBy, CreatedAt, LastChangedBy, LastChangedAt, FiscalYear, AccountingDocument,
+  ClearingFiscalYear, ClearingAccountingDocument, CurrencyClearingFiscalYear, CurrencyClearingDocument, Customer, Supplier, TransactionStatus, Disabled;
+  field ( mandatory : create ) AccountingDocumentType, CompanyCode, TransactionCurrency, NoAccountingDocument, NoCurrencyClearingDocument;
+  field ( mandatory ) FiscalPeriod, DocumentDate, PostingDate;
+  field ( readonly : update ) AccountingDocumentType, CompanyCode, TransactionCurrency;
+
+  validation checkFieldsMandatoryOnSave on save { create; update; }
+
+  mapping for zfi_t_xrdh
+    {
+      TransactionUUID              = txuuid;
+      CreatedBy                    = createdby;
+      CreatedAt                    = createdat;
+      LastChangedBy                = lastchangedby;
+      LastChangedAt                = lastchangedat;
+      LocalLastChangedAt           = locallastchangedat;
+      DocumentDate                 = bldat;
+      PostingDate                  = budat;
+      FiscalPeriod                 = monat;
+      AccountingDocumentType       = blart;
+      CompanyCode                  = bukrs;
+      TransactionCurrency          = waers;
+      DocumentReferenceID          = xblnr;
+      AccountingDocumentHeaderText = bktxt;
+    }
+
+  association _Item
+  { with draft; create { default function GetDefaultsForItemCreate; } }
+
+  }
+
+  define behavior for ZFI_I_XRDI
+  draft table zfi_t_xrdi_d
+  lock dependent by _Header
+  authorization dependent by _Header
+  {
+    update ( features : instance );
+    delete;
+
+    field ( readonly ) TransactionUUID;
+    field ( readonly, numbering : managed ) TransactionItemUUID;
+    field ( features : instance ) GLAccount, Customer, Supplier, Currency, CompanyCodeCurrency1, LocalCurrency1, LocalCurrency2;
+    field ( mandatory ) DebitCreditCode;
+
+    validation checkFieldsMandatoryOnSave on save { create; update; }
+    validation checkFieldValuesOnSave on save { create; update; }
+
+    side effects
+    {
+      field GLAccount affects $self;
+      field Customer affects $self;
+      field Supplier affects $self;
+    }
+
+    mapping for zfi_t_xrdi
+      {
+        TransactionUUID        = txuuid;
+        TransactionItemUUID    = tiuuid;
+        GLAccount              = hkont;
+        Customer               = kunnr;
+        Supplier               = lifnr;
+        DocumentItemText       = sgtxt;
+        DebitCreditCode        = shkzg;
+        CreditAmount           = creda;
+        DebitAmount            = debia;
+        Currency               = waers;
+        AssignmentReference    = zuonr;
+        AmountInCompanyCode1   = coma1;
+        CompanyCodeCurrency1   = hwae1;
+        AmountInLocalCurrency1 = loca1;
+        LocalCurrency1         = waer1;
+        AmountInLocalCurrency2 = loca2;
+        LocalCurrency2         = waer2;
+        TaxCode                = mwskz;
+        CostCenter             = kostl;
+        ProfitCenter           = prctr;
+        Segment                = fb_segment;
+        WBSElement             = ps_posid;
+      }
+
+    association _Header { with draft; }
+  }

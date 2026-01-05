@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SUSH" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <HEAD>
+    <NAME>4BBD592D7F90ADF7841F3EFD9EBA17</NAME>
+    <TYPE>HT</TYPE>
+    <DISPLAY_NAME>R3TR G4BA ZFI_XR_DIFF_SRV</DISPLAY_NAME>
+    <DEVCLASS>ZEU_XR_DIFF</DEVCLASS>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </HEAD>
+   <USOBX>
+    <USOBX>
+     <NAME>4BBD592D7F90ADF7841F3EFD9EBA17</NAME>
+     <TYPE>HT</TYPE>
+     <OBJECT>S_START</OBJECT>
+     <OKFLAG>X</OKFLAG>
+    </USOBX>
+   </USOBX>
+   <USOBX_EXT>
+    <item>
+     <OBJECT>S_START</OBJECT>
+     <TTEXT>TADIR nesneleri için başlatma yetkisi kontrolü</TTEXT>
+     <OCLSS>AAAB</OCLSS>
+     <OKFLAG>X</OKFLAG>
+     <DEVCLASS>S_PROFGEN_START_AUTH</DEVCLASS>
+     <PS_POSID>BC-SEC-AUT-CHK</PS_POSID>
+     <CI_TEXT>Kontrol et</CI_TEXT>
+     <CH_TEXT>Kontrol et</CH_TEXT>
+     <PR_TEXT>Hayır</PR_TEXT>
+     <EXCEP>3</EXCEP>
+     <EXCEP_TX>Okay</EXCEP_TX>
+     <EXCEP_ICON>@08@</EXCEP_ICON>
+    </item>
+   </USOBX_EXT>
+  </asx:values>
+ </asx:abap>
+</abapGit>

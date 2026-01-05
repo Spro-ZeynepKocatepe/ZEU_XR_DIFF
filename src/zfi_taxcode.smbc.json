@@ -1,0 +1,41 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Maintain Kur farkı vergi kodları",
+    "originalLanguage": "tr",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "serviceConfiguration": {
+    "serviceBinding": "ZFI_TAXCODE_SRV",
+    "serviceName": "ZFI_TAXCODE_SRV",
+    "serviceVersion": "0001",
+    "rootEntitySet": "TaxCodeS",
+    "name": "Kur farkı vergi kodları",
+    "configurationGroup": "",
+    "skipRootEntity": true
+  },
+  "appConfiguration": {
+    "listReport": {
+      "initialLoad": "disabled"
+    },
+    "objectPages": [
+      {
+        "entitySet": "TaxCodeS",
+        "variantManagement": "control"
+      }
+    ],
+    "tableSettings": [
+      {
+        "entitySet": "TaxCode",
+        "tableType": "gridTable",
+        "selectionMode": "single",
+        "selectAll": true,
+        "rowCountMode": "auto",
+        "frozenColumnCount": 1,
+        "creationModeName": "inlineCreationRows",
+        "createAtEnd": true,
+        "widthIncludingColumnHeader": true
+      }
+    ]
+  }
+}

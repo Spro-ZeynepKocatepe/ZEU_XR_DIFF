@@ -1,0 +1,7 @@
+@ObjectModel.leadingEntity.name: 'ZFI_I_TAXCODE_S'
+define service ZFI_TAXCODE_SRV {
+  expose ZFI_I_TAXCODE_S     as TaxCodeS;
+  expose ZFI_I_TaxCode       as TaxCode;
+  expose I_TaxCode;
+  expose I_ConditionTypeText;
+}

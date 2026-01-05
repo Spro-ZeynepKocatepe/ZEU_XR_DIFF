@@ -1,0 +1,64 @@
+managed implementation in class ZCL_FI_BP_I_TAXCODE unique;
+strict;
+with draft;
+define behavior for ZFI_I_TAXCODE_S alias TaxCodeS
+draft table ZFI_T_TAXCO_D_S
+with unmanaged save
+lock master total etag LastChangedAtMax
+authorization master( global )
+
+{
+  field ( readonly )
+   TaxCodeSingleID;
+
+  field ( notrigger )
+   TaxCodeSingleID,
+   LastChangedAtMax;
+
+
+  update;
+  internal create;
+  internal delete;
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  association _TaxCode { create ( features : instance ); with draft; }
+}
+
+define behavior for ZFI_I_TaxCode alias TaxCode ##UNMAPPED_FIELD
+persistent table ZFI_T_TAXCODE
+draft table ZFI_T_TAXCODE_D
+lock dependent by _TaxCodeS
+authorization dependent by _TaxCodeS
+
+{
+  field ( readonly )
+   TaxCodeSingleID,
+   Taxuuid;
+
+  field ( numbering : managed )
+   Taxuuid;
+
+  field ( notrigger )
+   TaxCodeSingleID;
+
+  update( features : global );
+  delete( features : global );
+
+  factory action ( features : instance ) CopyTaxCode [1];
+
+  mapping for ZFI_T_TAXCODE
+  {
+    Taxuuid = TAXUUID;
+    Mwskz = MWSKZ;
+    Kschl = KSCHL;
+    Ktosl = KTOSL;
+    Taxrate = TAXRATE;
+  }
+
+  association _TaxCodeS { with draft; }
+}

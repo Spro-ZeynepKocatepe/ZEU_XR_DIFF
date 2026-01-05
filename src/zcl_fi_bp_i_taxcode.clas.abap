@@ -1,6 +1,8 @@
 class ZCL_FI_BP_I_TAXCODE definition
   public
-  create private .
+  abstract
+  final
+  for behavior of ZFI_I_TAXCODE_S .
 
 public section.
 protected section.

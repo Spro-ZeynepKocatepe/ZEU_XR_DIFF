@@ -1,0 +1,6 @@
+abstract;
+
+define behavior for ZFI_D_XRDH_CLEARING_PARAM
+{
+  field ( mandatory ) AccountingDocument, FiscalYear, CompanyCode;
+}
