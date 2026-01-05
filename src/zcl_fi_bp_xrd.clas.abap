@@ -1,8 +1,4 @@
-class ZCL_FI_BP_XRD definition
-  public
-  create private .
-
-public section.
+class zcl_fi_bp_xrd definition public abstract final for behavior of zfi_i_xrdh.
 protected section.
 private section.
 ENDCLASS.
