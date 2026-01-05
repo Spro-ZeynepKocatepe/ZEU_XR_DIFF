@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_DTEL" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <DD04V>
+    <ROLLNAME>ZFI_E_LOCA1</ROLLNAME>
+    <DDLANGUAGE>T</DDLANGUAGE>
+    <HEADLEN>55</HEADLEN>
+    <SCRLEN1>10</SCRLEN1>
+    <SCRLEN2>20</SCRLEN2>
+    <SCRLEN3>40</SCRLEN3>
+    <DDTEXT>Ek PB 1 cinsinden tutar</DDTEXT>
+    <REPTEXT>Ek PB 1 cns. tutar</REPTEXT>
+    <SCRTEXT_S>Ek PB1 ttr</SCRTEXT_S>
+    <SCRTEXT_M>Ek PB 1 cns. tutar</SCRTEXT_M>
+    <SCRTEXT_L>Ek PB 1 cns. tutar</SCRTEXT_L>
+    <DTELMASTER>T</DTELMASTER>
+    <DATATYPE>CURR</DATATYPE>
+    <LENG>000023</LENG>
+    <DECIMALS>000002</DECIMALS>
+    <OUTPUTLEN>000030</OUTPUTLEN>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+   </DD04V>
+  </asx:values>
+ </asx:abap>
+</abapGit>

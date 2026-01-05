@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZFI_XR_DIFF</ARBGB>
+    <MASTERLANG>T</MASTERLANG>
+    <STEXT>Kur farkı mesaj sınıfı</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>000</MSGNR>
+     <TEXT>&amp;1 &amp;2 &amp;3 &amp;4</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>&quot;&amp;1&quot; için değer girin</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Veri bulunamadı</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Denkleştirme belgesi bulunamadı</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Seçilen belgenin ters kaydı alınmıştır. Kontrol ediniz</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Denkleştirme belgesi başka bir belgede kullanılmış</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Borç göstergesi seçiliyken alacak girilemez</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Alacak göstergesi seçiliyken borç girilemez</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Belgeye sadece bir vergi göstergesi girilebilir</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>Geri çekme belgesi bulunamadı</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>T</SPRSL>
+     <ARBGB>ZFI_XR_DIFF</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Kur farkı faturası etkin değil</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
